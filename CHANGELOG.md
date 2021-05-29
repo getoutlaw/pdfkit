@@ -4,6 +4,7 @@
 
 - Allow applying 'underline' and 'strike' text styling together on a text
 - Allow to specify the AcroForm text fontSize
+- Text will flow to the following page instead of always appending a new page at the end
 
 ### [v0.12.0] - 2021-04-04
 
