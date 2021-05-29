@@ -1,6 +1,6 @@
 {
-  "name": "pdfkit",
-  "description": "A PDF generation library for Node.js",
+  "name": "@simpleprax/pdfkit",
+  "description": "A PDF generation library for Node.js (With some Simpleprax fixes)",
   "keywords": [
     "pdf",
     "pdf writer",
@@ -9,7 +9,7 @@
     "document",
     "vector"
   ],
-  "version": "0.12.0",
+  "version": "0.12.0-custom",
   "homepage": "http://pdfkit.org/",
   "author": {
     "name": "Devon Govett",
@@ -17,11 +17,15 @@
     "url": "http://badassjs.com/"
   },
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/Simpleprax"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/foliojs/pdfkit.git"
+    "url": "https://github.com/Simpleprax/pdfkit.git",
+    "directory": "@Simpleprax/pdfkit"
   },
-  "bugs": "https://github.com/foliojs/pdfkit/issues",
+  "bugs": "https://github.com/Simpleprax/pdfkit/issues",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-external-helpers": "^7.10.4",
@@ -70,6 +74,7 @@
   "main": "js/pdfkit.js",
   "module": "js/pdfkit.es5.js",
   "esnext": "js/pdfkit.esnext.js",
+  "types": "types/index.d.ts",
   "browserify": {
     "transform": [
       "brfs"
