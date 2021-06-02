@@ -417,6 +417,12 @@ declare namespace PDFKit.Mixins {
     hidden?: boolean;
     creationDate?: Date;
     modifiedDate?: Date;
+    relationship?:
+      | 'Data'
+      | 'Source'
+      | 'Alternative'
+      | 'Supplement'
+      | 'Unspecified';
   }
 
   interface PDFAttachment {
