@@ -849,6 +849,7 @@ declare namespace PDFKit {
      */
     output(fn: any): void;
     end(): void;
+    setOpenActionAsPrint(): void;
     toString(): string;
   }
 }
