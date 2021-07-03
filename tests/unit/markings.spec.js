@@ -287,6 +287,11 @@ EMC
       ]);
       expect(docData).toContainChunk([`3 0 obj`, /\/Markings 9 0 R/, `endobj`]);
       expect(docData).toContainChunk([
+        `3 0 obj`,
+        /\/MarkInfo 9 0 R/,
+        `endobj`
+      ]);
+      expect(docData).toContainChunk([
         `8 0 obj`,
         `<<
 /Type /StructTreeRoot
@@ -362,6 +367,11 @@ EMC
       ]);
       expect(docData).toContainChunk([`3 0 obj`, /\/Markings 9 0 R/, `endobj`]);
       expect(docData).toContainChunk([
+        `3 0 obj`,
+        /\/MarkInfo 9 0 R/,
+        `endobj`
+      ]);
+      expect(docData).toContainChunk([
         `8 0 obj`,
         `<<
 /Type /StructTreeRoot
@@ -429,7 +439,7 @@ EMC
       ]);
       expect(docData).toContainChunk([
         `3 0 obj`,
-        /\/Markings 13 0 R/,
+        /\/MarkInfo 13 0 R/,
         `endobj`
       ]);
       expect(docData).toContainChunk([
@@ -551,23 +561,66 @@ EMC
       expect(docData).toContainChunk([`3 0 obj`, /\/Lang \(en-AU\)/, `endobj`]);
       expect(docData).toContainChunk([`3 0 obj`, /\/Markings 5 0 R/, `endobj`]);
       expect(docData).toContainChunk([
+        `3 0 obj`,
+        /\/Lang \(en-AU\)/,
+        `endobj`
+      ]);
+      expect(docData).toContainChunk([
+        `3 0 obj`,
+        /\/MarkInfo 5 0 R/,
+        `endobj`
+      ]);
+      expect(docData).toContainChunk([
         `5 0 obj`,
         `<<\n/Marked true\n>>`,
         `endobj`
       ]);
       expect(docData).toContainChunk([
         `3 0 obj`,
-        /\/ViewerPreferences 6 0 R/,
+        /\/ViewerPreferences 7 0 R/,
         `endobj`
       ]);
+
+      expect(docData).toContainChunk([
+        `3 0 obj`,
+        /\/StructTreeRoot 6 0 R/,
+        `endobj`
+      ]);
+
       expect(docData).toContainChunk([
         `6 0 obj`,
+        `<<
+/Type /StructTreeRoot
+/ParentTree <<
+  /Nums [
+]
+>>
+/ParentTreeNextKey 0
+>>`,
+        `endobj`
+      ]);
+
+
+      expect(docData).toContainChunk([
+        `7 0 obj`,
         /\/DisplayDocTitle true/,
         `endobj`
       ]);
-      expect(docData).toContainChunk([`trailer`, /\/Info 10 0 R/, `startxref`]);
-      expect(docData).toContainChunk([`10 0 obj`, /\/Title 14 0 R/, `endobj`]);
-      expect(docData).toContainChunk([`14 0 obj`, `(My Title)`, `endobj`]);
+      expect(docData).toContainChunk([
+        `trailer`,
+        /\/Info 11 0 R/,
+        `startxref`
+      ]);
+      expect(docData).toContainChunk([
+        `11 0 obj`,
+        /\/Title 15 0 R/,
+        `endobj`
+      ]);
+      expect(docData).toContainChunk([
+        `15 0 obj`,
+        `(My Title)`,
+        `endobj`
+      ]);
     });
   });
 

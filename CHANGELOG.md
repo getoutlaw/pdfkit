@@ -3,8 +3,13 @@
 ### Unreleased
 
 - Allow applying 'underline' and 'strike' text styling together on a text
-- Allow to specify the AcroForm text fontSize
 - Text will flow to the following page instead of always appending a new page at the end
+- Allow to specify the AcroForm text fontSize
+
+### [v0.12.1] - 2021-04-10
+
+- Update crypto-js to v3.3 (fix security issue)
+- Update fontkit to 1.8.1
 
 ### [v0.12.0] - 2021-04-04
 
