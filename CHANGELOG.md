@@ -5,6 +5,7 @@
 - Allow applying 'underline' and 'strike' text styling together on a text
 - Text will flow to the following page instead of always appending a new page at the end
 - Allow to specify the AcroForm text fontSize
+- Update crypto-js to v4.0 (properly fix security issue)
 
 ### [v0.12.1] - 2021-04-10
 

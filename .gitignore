@@ -6,8 +6,6 @@ src/
 playground/
 build/
 js/
-demo/bundle.js
-*.html
-!demo/browser.html
 .vscode
 coverage
+package-lock.json

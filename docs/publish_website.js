@@ -12,7 +12,9 @@ ghpages.publish(
       'docs/*.html',
       'docs/img/*.png',
       'docs/guide.pdf',
-      'demo/out.pdf'
+      'examples/browserify/browser.html',
+      'examples/browserify/bundle.js',
+      'examples/kitchen-sink.pdf'
     ],
     add: true,
     message
