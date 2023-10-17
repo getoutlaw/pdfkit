@@ -3993,7 +3993,7 @@ var TextMixin = {
   },
 
   _fragment(text, x, y, options) {
-    let dy, encoded, i, positions, textWidth, words;
+    let dy, encoded, i, positions, textWidth, words, startSpaces;
     text = `${text}`.replace(/\n/g, '');
 
     if (text.length === 0) {
@@ -4018,8 +4018,13 @@ var TextMixin = {
 
         case 'justify':
           // calculate the word spacing value
+          // Grab the before/after spaces
+          // Fix for when justified text is manually indented
+          var startSpacesMatch = text.match(/^\s+/);
+          startSpaces = startSpacesMatch && startSpacesMatch[0] || '';
           words = text.trim().split(/\s+/);
-          textWidth = this.widthOfString(text.replace(/\s+/g, ''), options);
+          if (startSpaces) words.unshift(startSpaces);
+          textWidth = this.widthOfString(startSpaces + text.replace(/\s+/g, ''), options);
           var spaceWidth = this.widthOfString(' ') + characterSpacing;
           wordSpacing = Math.max(0, (options.lineWidth - textWidth) / Math.max(1, words.length - 1) - spaceWidth);
           break;
@@ -4164,7 +4169,10 @@ var TextMixin = {
 
 
     if (wordSpacing) {
-      words = text.trim().split(/\s+/);
+      words = text.trim().split(/\s+/); // if we are justified, add back the "spaces word" into the words array
+      // Fix for when justified text is manually indented
+
+      if (align === 'justify' && startSpaces) words.unshift(startSpaces);
       wordSpacing += this.widthOfString(' ') + characterSpacing;
       wordSpacing *= 1000 / this._fontSize;
       encoded = [];
